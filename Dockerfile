@@ -1,4 +1,7 @@
-FROM ubuntu
-MAINTAINER mallikarjunsahu
-RUN apt-get update && apt-get -y install apache2
-EXPOSE 80
+FROM node:latest
+WORKDIR usr/src/app
+COPY package*.json ./
+RUN npm install
+COPY . .
+expose 3000
+CMD[ "node", "index.js" ]

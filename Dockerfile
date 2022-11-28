@@ -1,7 +1,5 @@
 FROM nginx
-WORKDIR usr/src/app
-COPY package*.json ./
-RUN npm install
-COPY . .
+MAINTAINER aissel
+RUN apt-get update
 expose 3000
-CMD[ "node", "index.js" ]
+

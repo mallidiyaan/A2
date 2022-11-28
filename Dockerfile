@@ -1,4 +1,4 @@
-FROM node:latest
+FROM nginx
 WORKDIR usr/src/app
 COPY package*.json ./
 RUN npm install
